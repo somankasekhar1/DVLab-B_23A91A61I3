@@ -76,18 +76,9 @@ ggpairs(
   aes(color = Species, alpha = 0.6) 
 )
 
-png("plots/Week5_Iris_ScatterPlots.png")
-
-ggplot(
-  iris,
-  aes(
-    x = Sepal.Length,
-    y = Sepal.Width,
-    color = Species,
-    size = Petal.Length
-  )
-) +
-  geom_point(alpha = 0.7) +
-  theme_minimal()
-
-dev.off()
+ggsave(
+  "plots/Week5_Scatter_Matrix_ggpairs.png",
+  plot = p2,
+  width = 10,
+  height = 8
+)
